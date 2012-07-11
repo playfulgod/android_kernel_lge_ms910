@@ -72,7 +72,7 @@ obj-$(CONFIG_MACH_LGE_BRYCE) += board-bryce-bt.o
 #CONFIG_MACH_LGE_BRYCE	chanhee.park	10.04.21
 #For Camera
 obj-$(CONFIG_MACH_LGE_BRYCE) += board-bryce-camera.o
-obj-$(CONFIG_MACH_LGE) += devices_lge.o
+#obj-$(CONFIG_MACH_LGE) += devices_lge.o
 
 #CONFIG_MACH_LGE_BRYCE chanha.park@lge.com    10.08.26
 #For Bluetooth
