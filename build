@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Our settings
+
+#Let's make sure the environment is clean and ready to compile the kernel
+echo
+echo "Cleaning house!!"
+echo
+make mrproper
+rm -rf ../package/system/lib/modules/*.ko
+rm -f ../package/zImage
+rm -f ../package/ramdisk.gz
+echo
+echo "House cleaned, lets build a kernel!!!"
+echo
+#
+# Lets set the kernel defconfig
+echo "defconfig = plague_defconfig"
+echo
+make ARCH=arm plague_defconfig
+#
+# Let's build a kernel
+echo
+echo "Now compiling kernel, go get a soda! ;)"
+echo
+ARCH=arm CROSS_COMPILE=~/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- make -j16
+#
+if [ -f arch/arm/boot/zImage ]; then
+	  echo
+      echo "Plague has been compiled!!! You can find it in arch/arm/boot/zImage"
+	  echo
+else
+      echo
+	  echo "Kernel did not compile, please check for errors!!"
+	  echo
+fi
+
+# These move files to easier locations
+find -name '*.ko' -exec cp -av {} ../package/system/lib/modules/ \;
+cp arch/arm/boot/zImage ../package/
+
+# This part packs the img up :)
+../package/mkbootfs ../package/ramdisk_tmp | gzip > ../package/ramdisk.gz
+../package/mkbootimg --kernel ../package/zImage --ramdisk ../package/ramdisk.gz --cmdline "console=ttyMSM1 androidboot.hardware=qcom" -o ../package/boot.img --base 0x00200000
