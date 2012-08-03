@@ -358,7 +358,7 @@ static void kgsl_ebimem_free(struct kgsl_memdesc *memdesc)
 	if (memdesc->hostptr)
 		iounmap(memdesc->hostptr);
 
-//	free_contiguous_memory_by_paddr(memdesc->physaddr);
+	free_contiguous_memory_by_paddr(memdesc->physaddr);
 }
 
 static void kgsl_coherent_free(struct kgsl_memdesc *memdesc)
@@ -570,7 +570,7 @@ _kgsl_sharedmem_ebimem(struct kgsl_memdesc *memdesc,
 	memdesc->size = size;
 	memdesc->pagetable = pagetable;
 	memdesc->ops = &kgsl_ebimem_ops;
-//	memdesc->physaddr = allocate_contiguous_memory_nomap(size, PMEM_MEMTYPE_EBI1, SZ_8K);
+	memdesc->physaddr = allocate_contiguous_memory_nomap(size, PMEM_MEMTYPE_EBI1, SZ_8K);
 
 	if (memdesc->physaddr == 0) {
 		KGSL_CORE_ERR("allocate_contiguous_ebi_nomap(%d) failed\n",

@@ -1,9 +1,9 @@
-/* This file is auto generated, version 3 */
+/* This file is auto generated, version 1 */
 /*  PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#3 PREEMPT Mon Jan 16 06:47:42 CST 2012"
-#define LINUX_COMPILE_TIME "06:47:42"
-#define LINUX_COMPILE_BY "lg-electronics"
-#define LINUX_COMPILE_HOST "mtmichaelson-Studio-1737"
+#define UTS_VERSION "#1 PREEMPT Fri Aug 3 05:10:11 EDT 2012"
+#define LINUX_COMPILE_TIME "05:10:11"
+#define LINUX_COMPILE_BY "playfulgod"
+#define LINUX_COMPILE_HOST "The-Monster"
 #define LINUX_COMPILE_DOMAIN "(none)"
-#define LINUX_COMPILER "gcc version 4.4.3 (GCC) "
+#define LINUX_COMPILER "gcc version 4.3.1 (GCC) "

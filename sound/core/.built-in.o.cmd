@@ -1,0 +1,1 @@
+cmd_sound/core/built-in.o :=  /home/playfulgod/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-ld -EL    -r -o sound/core/built-in.o sound/core/snd.o sound/core/snd-timer.o sound/core/snd-pcm.o sound/core/snd-page-alloc.o 

@@ -1,0 +1,1 @@
+cmd_drivers/bluetooth/built-in.o :=  /home/playfulgod/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-ld -EL    -r -o drivers/bluetooth/built-in.o drivers/bluetooth/hci_uart.o drivers/bluetooth/msm_bt_sleep.o drivers/bluetooth/bluetooth-power.o 
