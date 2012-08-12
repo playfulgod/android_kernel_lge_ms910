@@ -36,9 +36,9 @@ else
 fi
 
 # These move files to easier locations
-find -name '*.ko' -exec cp -av {} ../package/system/lib/modules/ \;
-cp arch/arm/boot/zImage ../package/
+#find -name '*.ko' -exec cp -av {} ../package/system/lib/modules/ \;
+#cp arch/arm/boot/zImage ../package/
 
 # This part packs the img up :)
-../package/mkbootfs ../package/ramdisk_tmp | gzip > ../package/ramdisk.gz
-../package/mkbootimg --kernel ../package/zImage --ramdisk ../package/ramdisk.gz --cmdline "console=ttyMSM1 androidboot.hardware=qcom" -o ../package/boot.img --base 0x00200000
+#../package/mkbootfs ../package/ramdisk_tmp | gzip > ../package/ramdisk.gz
+#../package/mkbootimg --kernel ../package/zImage --ramdisk ../package/ramdisk.gz --cmdline "console=ttyMSM1 androidboot.hardware=qcom" -o ../package/boot.img --base 0x00200000
