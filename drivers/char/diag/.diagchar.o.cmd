@@ -1,1 +1,0 @@
-cmd_drivers/char/diag/diagchar.o := /home/playfulgod/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-ld -EL    -r -o drivers/char/diag/diagchar.o drivers/char/diag/diagchar_core.o drivers/char/diag/diagchar_hdlc.o drivers/char/diag/diagfwd.o drivers/char/diag/diagmem.o drivers/char/diag/lg_diag_kernel_service.o 

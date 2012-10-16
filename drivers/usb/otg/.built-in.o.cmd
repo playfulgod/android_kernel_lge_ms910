@@ -1,1 +1,0 @@
-cmd_drivers/usb/otg/built-in.o :=  /home/playfulgod/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-ld -EL    -r -o drivers/usb/otg/built-in.o drivers/usb/otg/otg.o drivers/usb/otg/gpio_vbus.o drivers/usb/otg/nop-usb-xceiv.o drivers/usb/otg/msm72k_otg.o 
