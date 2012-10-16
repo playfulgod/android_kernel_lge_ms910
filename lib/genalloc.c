@@ -15,7 +15,6 @@
 #include <linux/bitmap.h>
 #include <linux/genalloc.h>
 
-
 /* General purpose special memory pool descriptor. */
 struct gen_pool {
 	rwlock_t lock;			/* protects chunks list */
@@ -33,7 +32,7 @@ struct gen_pool_chunk {
 	unsigned long bits[0];		/* bitmap for allocating memory chunk */
 };
 
-/**
+/*
  * gen_pool_create() - create a new special memory pool
  * @order:	Log base 2 of number of bytes each bitmap bit
  *		represents.
@@ -245,5 +244,3 @@ done:
 	read_unlock(&pool->lock);
 }
 EXPORT_SYMBOL(gen_pool_free);
-
-

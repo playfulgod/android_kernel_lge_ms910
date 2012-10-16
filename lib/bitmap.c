@@ -361,6 +361,7 @@ EXPORT_SYMBOL(bitmap_find_next_zero_area_off);
 
 #define CHUNKSZ				32
 #define nbits_to_hold_value(val)	fls(val)
+//#define unhex(c)			(isdigit(c) ? (c - '0') : (toupper(c) - 'A' + 10))
 #define BASEDEC 10		/* fancier cpuset lists input in decimal */
 
 /**
@@ -604,7 +605,7 @@ static int __bitmap_parselist(const char *buf, unsigned int buflen,
 	totaldigits = c = 0;
 	bitmap_zero(maskp, nmaskbits);
 	do {
-		exp_digit = 1;
+				exp_digit = 1;
 		in_range = 0;
 		a = b = 0;
 
@@ -643,7 +644,6 @@ static int __bitmap_parselist(const char *buf, unsigned int buflen,
 
 			if (!isdigit(c))
 				return -EINVAL;
-
 			b = b * 10 + (c - '0');
 			if (!in_range)
 				a = b;
@@ -658,10 +658,9 @@ static int __bitmap_parselist(const char *buf, unsigned int buflen,
 			set_bit(a, maskp);
 			a++;
 		}
-	} while (buflen && c == ',');
+		 } while (buflen && c == ',');
 	return 0;
 }
-
 int bitmap_parselist(const char *bp, unsigned long *maskp, int nmaskbits)
 {
 	char *nl  = strchr(bp, '\n');
@@ -1182,4 +1181,3 @@ void bitmap_copy_le(void *dst, const unsigned long *src, int nbits)
 	}
 }
 EXPORT_SYMBOL(bitmap_copy_le);
-

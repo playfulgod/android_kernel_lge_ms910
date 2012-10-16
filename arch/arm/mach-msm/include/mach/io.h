@@ -27,3 +27,4 @@ void __iomem *__msm_ioremap(unsigned long phys_addr, size_t size, unsigned int m
 #define __mem_pci(a)    (a)
 
 #endif
+

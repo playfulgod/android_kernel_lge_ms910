@@ -50,6 +50,7 @@ enum msm_cpu {
 	MSM_CPU_8X50A,
 	MSM_CPU_7X30,
 	MSM_CPU_8X55,
+	MSM_CPU_8960,
 	MSM_CPU_8X60,
 };
 
@@ -123,6 +124,19 @@ static inline int cpu_is_msm8x60(void)
 
 	BUG_ON(cpu == MSM_CPU_UNKNOWN);
 	return cpu == MSM_CPU_8X60;
+}
+
+static inline int cpu_is_msm8960(void)
+{
+	enum msm_cpu cpu = socinfo_get_msm_cpu();
+
+	BUG_ON(cpu == MSM_CPU_UNKNOWN);
+	return cpu == MSM_CPU_8960;
+}
+
+static inline int cpu_is_msm8930(void)
+{
+	return 0;
 }
 
 #endif
