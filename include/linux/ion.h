@@ -800,4 +800,3 @@ struct ion_flag_data {
 #define ION_IOC_GET_FLAGS		_IOWR(ION_IOC_MAGIC, 10, \
 						struct ion_flag_data)
 #endif /* _LINUX_ION_H */
-
