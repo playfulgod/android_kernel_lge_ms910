@@ -36,7 +36,8 @@ else
 fi
 
 # These move files to easier locations
-#find -name '*.ko' -exec cp -av {} ../package/system/lib/modules/ \;
+mkdir arch/arm/boot/modules
+find -name '*.ko' -exec cp -av {} arch/arm/boot/modules/ \;
 #cp arch/arm/boot/zImage ../package/
 
 # This part packs the img up :)
